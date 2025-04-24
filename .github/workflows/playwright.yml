@@ -15,8 +15,12 @@ jobs:
         node-version: lts/*
     - name: Install dependencies
       run: npm install
-    - name: Start project
-      run: npm run dev
+    - name: Start Vite server
+      run: npm run dev &
+      env:
+        CI: true
+    - name: Wait for Vite to start
+      run: timeout 60 sh -c 'until curl -s http://localhost:5173; do echo waiting for vite...; sleep 2; done'
     - name: Install Playwright Browsers
       run: npx playwright install --with-deps
     - name: Run Playwright tests
