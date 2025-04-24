@@ -1,0 +1,51 @@
+/* ------- base commune à tous les dés ----------------------------------- */
+.dice {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 700;
+    border-radius: 0.4rem;
+    border: 2px solid rgba(0,0,0,.3);
+    box-shadow: 0 2px 4px rgba(0,0,0,.25),
+    inset 0 1px 4px rgba(255,255,255,.25);
+    user-select: none;
+    transition: transform .12s ease;
+}
+
+.dice:hover { transform: translateY(-2px); }
+
+.dice-value { font-size: 1.4rem; }
+
+/* ------- couleurs par type --------------------------------------------- */
+/* nuances choisies : dégradé léger pour le relief, texte lisible          */
+
+.dice-hero {     /* violet */
+    background: linear-gradient(145deg, #a66bff, #7b3eff);
+    color: #f8f4ff;
+}
+
+.dice-captain {  /* gris */
+    background: linear-gradient(145deg, #bdbdbd, #8d8d8d);
+    color: #ffffff;
+}
+
+.dice-soldier {  /* vert */
+    background: linear-gradient(145deg, #4caf50, #2e7d32);
+    color: #e8fbe8;
+}
+
+.dice-traitor {  /* rouge */
+    background: linear-gradient(145deg, #e53935, #b71c1c);
+    color: #ffeaea;
+}
+
+.dice-cursed {   /* jaune orangé */
+    background: linear-gradient(145deg, #ffb74d, #ff9800);
+    color: #3a2500;
+}
+
+.dice-mage {     /* bleu */
+    background: linear-gradient(145deg, #42a5f5, #1e88e5);
+    color: #eaf6ff;
+}

@@ -20,12 +20,13 @@ describe('Test de la fonction getTeamValue', () => {
         test('test de la valeur d’une équipe avec un seul joueur', () => {
             expect(getTeamValue([getHero()])).toBe(3);
         });
-        test('test de la valeur d’une équipe avec un joueur mage', () => {
+        test('test de la valeur d’une équipe avec plusieurs mages', () => {
             let team: Dice[] = [];
-            team.push(getMage());
             team.push(getHero());
             team.push(getSoldier());
-            expect(getTeamValue(team)).toBe(3 + 1 + (team.length - 1));
+            team.push(getMage());
+            team.push(getMage());
+            expect(getTeamValue(team)).toBe(3 + 1 + 2 + 2);
         });
     })
 
@@ -62,7 +63,6 @@ describe('Test de la fonction getTeamValue', () => {
             team.push(getTraitor());
             expect(getTeamValue(team)).toBe(3+3+1+1+1-3-3);
         });
-
     })
 })
 

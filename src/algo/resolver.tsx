@@ -33,7 +33,7 @@ export function getTeamValue(team: Dice[]) {
     let nbHero = 0;
     for (const dice of team) {
         if (dice.isMage) {
-            value += team.length - 1;
+            value += team.filter(d => ! d.isMage).length;
         } else {
             if (dice.value === 3) {
                 nbHero++;

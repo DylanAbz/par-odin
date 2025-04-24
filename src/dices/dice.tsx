@@ -1,4 +1,4 @@
-enum DiceType {
+export enum DiceType {
     HERO,
     CAPTAIN,
     SOLDIER,
